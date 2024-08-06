@@ -1,4 +1,4 @@
-Certainly! Here's a concise introduction for your Hangman web app:
+
 
 ---
 
