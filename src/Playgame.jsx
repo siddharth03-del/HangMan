@@ -15,15 +15,17 @@ function Playgame(){
     const [level, setlevel] = useState(0);
     function KeypadHandler(event){
         const key = event.target.value;
-        let arr = structuredClone(usedletters);
-        arr.push(key);
-        updateusedletters(arr);
+        if(!usedletters.includes(key)){
+            let arr = structuredClone(usedletters);
+            arr.push(key);
+            updateusedletters(arr);
         const btn = event.target;
         btn.classList.remove("bg-white");
         btn.classList.add("bg-blue-300");
         setwin(Checkwin(wordselected, arr));
         if(!wordselected.toUpperCase().split("").includes(key)){
             setlevel( level + 1 )
+        }
         }
     }
     function WinHandler(){
@@ -37,6 +39,9 @@ function Playgame(){
             <div className="flex flex-row mt-10">
                 <Keypad clickhandler={KeypadHandler}/>
                 <Hangman level={level}/>
+            </div>
+            <div className="h-20 w-96 mt-2 ml-13">
+                <h1 className="text-red-600 text-2xl font-bold"> Chances remaining {7 - level} out of 7</h1>
             </div>
         </div>
         {win? <Dialog clickhandler={WinHandler} text="You Won"/>: null}

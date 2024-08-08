@@ -9,7 +9,7 @@ function Homepage(){
     }
     return(
         <div className="w-screen h-screen flex flex-col items-center bg-center" style={{backgroundImage:`url(${Background})`}}>
-            <div style={{backgroundImage:`url(${Logo})`}} className="h-44 w-80 mt-10">
+            <div style={{backgroundImage:`url(${Logo})`}} className="h-44 w-customize mt-10">
                 
             </div>
             <div className="mt-10">
